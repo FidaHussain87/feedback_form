@@ -9,12 +9,9 @@ function App() {
   };
 
   const handleSubmit = async () => {
-    const response = await axios.post(
-      `${process.env.REACT_APP_API_URL}/submit-feedback`,
-      {
-        feedback,
-      }
-    );
+    const response = await axios.post("http://localhost:3001/submit-feedback", {
+      feedback,
+    });
     if (response.status === 200) {
       setFeedback("");
       alert(response.data);
